@@ -1,6 +1,8 @@
+schoolInquairy() {
+ 
+  print('would you like to know ' );
 
-
-
-schoolInquairy(){
-  
+  aboutSchool() {}
+  aboutClasses() {}
+  aboutLibrery() {}
 }
