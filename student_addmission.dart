@@ -1,6 +1,9 @@
 import 'dart:io';
 
-List<Map<String, dynamic>> studentsData = [
+import 'main.dart';
+
+List<Map<String, dynamic>> newAdmissionStudentData = [];
+List<Map<String, dynamic>> oldstudentsData = [
   {
     'studentName': 'Rehman Ali',
     'father name': 'Imran Ali',
@@ -8,6 +11,7 @@ List<Map<String, dynamic>> studentsData = [
     'date of birth': '23/1/2022',
     'address': 'DHA phase the rooling park',
     'ispayed': '3000'
+
   },
   {
     'studentName': 'Sajad Ali',
@@ -46,7 +50,7 @@ studentadmission() {
       String studentName = stdin.readLineSync()!;
 
       if (studentName.isNotEmpty) {
-        studentsData.add({'student Name': studentName});
+        newAdmissionStudentData.add({'student Name': studentName});
         break;
       } else {
         print('You did not enter the name correctly.');
@@ -59,7 +63,7 @@ studentadmission() {
       String studentFatherName = stdin.readLineSync()!;
 
       if (studentFatherName.isNotEmpty) {
-        studentsData.last.addAll({'student father Name': studentFatherName});
+        newAdmissionStudentData.last.addAll({'student father Name': studentFatherName});
         break;
       } else {
         print('You did not enter father name correctly.');
@@ -72,7 +76,7 @@ studentadmission() {
       String studentAge = stdin.readLineSync()!;
 
       if (studentAge.isNotEmpty) {
-        studentsData.last.addAll({'studentAge': studentAge});
+        newAdmissionStudentData.last.addAll({'studentAge': studentAge});
 
         break;
       } else {
@@ -86,7 +90,7 @@ studentadmission() {
       String studentDateOfBirth = stdin.readLineSync()!;
 
       if (studentDateOfBirth.isNotEmpty) {
-        studentsData.last.addAll({'student Date Of Birth': studentDateOfBirth});
+        newAdmissionStudentData.last.addAll({'student Date Of Birth': studentDateOfBirth});
         break;
       } else {
         print('You did not enter date of birth correctly.');
@@ -99,56 +103,61 @@ studentadmission() {
       String studentAddress = stdin.readLineSync()!;
 
       if (studentAddress.isNotEmpty) {
-        studentsData.last.addAll({'studentAddress': studentAddress});
+        newAdmissionStudentData.last.addAll({'studentAddress': studentAddress});
         break;
       } else {
         print('You did not enter address correctly. Please enter address:');
       }
     }
 
+//   school fee  pay
+    while (true) {
+      print('please pay RS: 3000 ');
+      print('if you dont want to pay now then please press enter ');
 
-//   school fee  pay 
-     while (true) {
-    print('please pay RS: 3000 ');
-print('if you dont want to pay now then please press enter ');
+      String isPaid = stdin.readLineSync()!;
 
-
-    String isPaid = stdin.readLineSync()!;
-
-    if (isPaid == '3000') {
-      studentsData.last.addAll({'isPaid': isPaid});
-      break;
-    } 
-    else if (isPaid.isEmpty){
-     print('you did not payed admission fees  gb school gives you time of 1 month ');
-     if(isPaid.isEmpty){
-      studentsData.last.addAll({'isPaid':'user will pay after one month'});
-   break;
-     }
+      if (isPaid == '3000') {
+        newAdmissionStudentData.last.addAll({'isPaid': isPaid});
+        break;
+      } else if (isPaid.isEmpty) {
+        print(
+            'you did not payed admission fees  gb school gives you time of 1 month ');
+        if (isPaid.isEmpty) {
+          newAdmissionStudentData.last.addAll({'isPaid': 'user will pay after one month'});
+          break;
+        }
+      } else {
+        print('You did not paid fess:');
+      }
     }
-    else {
-      print('You did not paid fess:');
-    }
-  }
 
     // Admission Process Completed
 
-    print("if you want to add more student then Enter yes");
+    print("if you want to add more student then Enter write yes");
 
     print("if you want to close program then Enter any");
+
+    print("if you want go back to main menu Enter write back");
+
 
     String userinput = stdin.readLineSync()!;
 
     if (userinput == 'yes') {
       isadmitted = true;
       print('program is continue');
-    } else {
+    }
+    else if (userinput == 'back'){
+  isadmitted = false;
+      mainn();
+    }
+         
+
+     else {
       isadmitted = false;
 
       print('program exited');
     }
-    print(studentsData.last);
+    
   }
-
- 
 }
