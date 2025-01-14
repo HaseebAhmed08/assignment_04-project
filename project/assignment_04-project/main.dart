@@ -4,8 +4,8 @@ import 'adminpanel.dart';
 import 'exams.dart';
 import 'parentalAcces.dart';
 import 'schoolInquairy.dart';
+import 'studentPayment.dart';
 import 'student_addmission.dart';
-import 'students_data.dart';
 
 void main() {
 //   print('''
@@ -43,6 +43,7 @@ print('''
   5. parental acces please Enter digit 5
   6. for admin panel please Enter digit 6
   7. come to main page Enter digit 7
+
   ''');
 
 
@@ -60,7 +61,7 @@ print('''
   } else if (userInput == 2) {
     studentadmission();
   } else if (userInput == 3) {
-    studentPayment();
+    schoolPayment();
   } else if (userInput == 4) {
     exams();
   } else if (userInput == 5) {

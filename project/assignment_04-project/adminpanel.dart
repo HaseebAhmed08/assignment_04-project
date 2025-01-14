@@ -46,7 +46,10 @@ schoolData() {
     newAdmissionStudentData;
   } else if (adminInput == '2') {
     var allStudentsData = oldstudentsData + newAdmissionStudentData;
-    print(allStudentsData);
+    
+  var payedStudents  =  allStudentsData.where((e)=>e['isPayed']=='3000' ).toList();
+    
+    print(payedStudents);
   }
   else if(adminInput == '3'){
     
