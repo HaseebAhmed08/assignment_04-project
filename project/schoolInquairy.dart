@@ -1,92 +1,110 @@
+import 'dart:io';
 
-  import 'dart:io';
+import 'main.dart';
 
-schoolInquairy(){
-
-print('''
+schoolInquairy() {
+  print('''
  
-   ===================================                            
-===== Wellcom inquairy about school =====
-  =================================== 
+                  ===================================== 
+
+                ===== Wellcom inquairy about school =====
+
+                  =====================================
  
 
-1  ==>  if want to know about School Enter 1
-  
-2  ==>   If you want to know about School Rules Enter 2
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+=                                                                             =
+=              ==>  if want to know about School Enter  1                     =
+=                                                                             =
+=              ==>   If you want to know about School Rules Enter  2          =
+=                                                                             =
+=              ==>   Age crateria for school Enter  3                         =
+=                                                                             =
+=              ==>   Document Required for admission Enter  4                 =
+=                                                                             =
+=              ==>   Health and Safety policies Enter  5                      =
+=                                                                             =
+=              ==>   Health and Safety policies Enter  6                      =
+=                                                                             =
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+''');
 
-3  ==>   Age crateria for school Enter 3
+  var userInPut = stdin.readLineSync();
 
-4  ==>   Document Required for admission Enter 4
-
-5  ==>   Health and Safety policies Enter 5 ''');
-
-var userInPut= stdin.readLineSync();
-
-if(userInPut == "1"){
-  AboutSchool();
+  if (userInPut == "1") {
+    AboutSchool();
+  } else if (userInPut == "2") {
+    SchoolRules();
+  } else if (userInPut == "3") {
+    AgeCrateria();
+  } else if (userInPut == "4") {
+    DocumentRequired();
+  } else if (userInPut == "5") {
+    HealthandSafetyPolicies();
+  } else if (userInPut == "6") {
+    mainn();
+  } else {
+    print("--:  This Do's Not exist  :--");
+  }
 }
-else if (userInPut == "2") {
-  SchoolRules();
-}
-else if (userInPut == "3") {
-  AgeCrateria(); 
-}
-
-else if (userInPut== "4") {
-  DocumentRequired();
-}
-
-else if (userInPut== "5") {
-  HealthandSafetyPolicies();
-}
- else {
-
- print("This Do's Not exist");
-
-}
- }
-
 
 // About School
 
-AboutSchool(){
-print(''' 
+AboutSchool() {
+  print('''
 
-  ===================================                            
-=====  hello wellcome to GB school =====
-  =================================== 
+                   ====================================                            
+                 =====  hello wellcome to GB school =====
+                   ==================================== 
 
-1. School Overview: A dynamic and nurturing environment focused on learning and growth.
 
-2. Library: A well-stocked haven for curious minds with books and digital resources.
 
-3. Sports Grounds: Expansive fields for soccer, cricket, basketball, and more.
 
-4. Science Labs: State-of-the-art facilities for hands-on experiments in Biology, Chemistry, and Physics.
-
-5. Classes: Comprehensive education from Nursery to Matric, fostering academic excellence.
-
-6. Cleanliness: Emphasis on spotless classrooms, regular sanitization, and waste management.
-
-7. Health and Safety: Comprehensive policies to ensure student well-being and safety.
-
-8. Holistic Education: Focus on academic, physical, emotional, and social development.
-
-9. Dedicated Faculty: Passionate teachers providing personalized attention to each student.
-
-10. Community Spirit: Promoting inclusivity, respect for diversity, and a strong sense of community.
+===============================================================================
+=   1. School Overview: A dynamic and nurturing environment focused on         =
+=      learning and growth.                                                    = 
+=                                                                              =
+=   2.  Library: A well-stocked haven for curious minds with books and         =
+=       digital resources.                                                     =
+=                                                                              =
+=   3.  Sports Grounds: Expansive fields for soccer, cricket, basketball,      =
+=       and more.                                                              =
+=                                                                              = 
+=   4.  Science Labs: State-of-the-art facilities for hands-on experiments     =
+=      in Biology, Chemistry, and Physics.                                     =
+=                                                                              =
+=   5.  Classes: Comprehensive education from Nursery to Matric, fostering     =
+=      academic excellence.                                                    =
+=                                                                              =
+=   6.  Cleanliness: Emphasis on spotless classrooms, regular sanitization,    = 
+=      and waste management.                                                   =
+=                                                                              =
+=   7. Health and Safety: Comprehensive policies to ensure student             =
+=     well-being and safety.                                                   =
+=                                                                              =
+=   8. Holistic Education: Focus on academic, physical, emotional,             = 
+=      and social development.                                                 =
+=                                                                              =
+=   9. Dedicated Faculty: Passionate teachers providing personalized           =
+=     attention to each student.                                               = 
+=                                                                              =
+=  10. Community Spirit: Promoting inclusivity, respect for diversity,         =
+=     and a strong sense of community.                                         =
+=                                                                              =
+=                                                                              =
+=                                                                              =
+ = = = = = = = = = = = = = = = = = = = = = = == = = = = = = = = = =  = = = = = = 
 
 ''');
-
 }
 
 // about School Rules
-SchoolRules(){
-  print( '''
+SchoolRules() {
+  print('''
 
-  ===================================                            
-=====      GB School Rules       =====
-  =================================== 
+                   ===================================                            
+                 =====      GB School Rules       =====
+                   ================================== 
 
 1. Punctuality: Students must arrive school at 7:00 am.
 
@@ -111,9 +129,8 @@ SchoolRules(){
 
 //about Age Crateria
 
-AgeCrateria(){
-
-print('''
+AgeCrateria() {
+  print('''
 
   ===================================                            
 =====      Age Crataria           =====
@@ -139,7 +156,7 @@ print('''
 
 // about Document Required
 
-DocumentRequired(){
+DocumentRequired() {
   print('''
 
   ===================================                            
@@ -167,8 +184,8 @@ DocumentRequired(){
 
 // about Health and Safety Policies
 
-HealthandSafetyPolicies(){
-  print('''   
+HealthandSafetyPolicies() {
+  print('''
 
   ===================================                            
 =====  Health and Safety Policies =====
