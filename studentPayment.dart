@@ -14,23 +14,24 @@ void schoolPayment() {
   String? userInput = stdin.readLineSync()?.trim();
 
   if (userInput == '1') {
-    print('--:  Please enter your name  :--');
-    String? studentName = stdin.readLineSync()?.trim();
+    print('--:  Please enter your Id  :--');
+    String? studentId = stdin.readLineSync()?.trim();
 
-    if (studentName != null && studentName.isNotEmpty) {
+    if (studentId != null && studentId.isNotEmpty) {
       bool userFound = false;
 
       for (var student in allList) {
-        if (student.containsKey(studentName)) {
+        if (student.containsKey(studentId)) {
           userFound = true;
-          print('User name found: ${student[studentName]}');
+          print('User name found: ${student[studentId]['student Name']}');
           print('--:  Please enter amount: 3000  :--');
 
           String? studentPayment = stdin.readLineSync()?.trim();
 
           if (studentPayment != null && studentPayment == '3000') {
-            student[studentName]['isPaid'] = studentPayment;
-            print('Payment status updated: ${student[studentName]['isPaid']}');
+            student[studentId]['isPaid'] = studentPayment;
+            print('''Payment status updated:student is = ${student[studentId]['student Name']}  
+            and paid =  ${student[studentId]['isPaid']}''');
 
            // while loop for go back to home
 
@@ -65,7 +66,10 @@ void schoolPayment() {
 
       if (!userFound) {
         print('--:  User name not found in records  :--');
-        print('--:  If you want to run the program again, enter "ok". To exit, enter "exit"  :--');
+        print('''--:  If you want to run the program again, enter "ok"  :--
+                --:   To exit, enter "exit"   :--
+        
+        ''');
 
         String? userRetry = stdin.readLineSync()?.trim();
         if (userRetry != null && userRetry == 'ok') {

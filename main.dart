@@ -1,11 +1,12 @@
 import 'dart:io';
 
-import 'adminpanel.dart';
+// import 'adminpanel.dart';
 
+import 'adminpanel.dart';
 import 'parentalAcces.dart';
 import 'schoolInquairy.dart';
-import 'studentPayment.dart';
 import 'student_addmission.dart';
+import 'studentPayment.dart';
 
 void main() {
   mainn();
@@ -43,10 +44,11 @@ mainn() {
   if (userInput == 1) {
     schoolInquairy();
   } else if (userInput == 2) {
+    // studentadmission();
     studentadmission();
   } else if (userInput == 3) {
     schoolPayment();
-  }  else if (userInput == 4) {
+  } else if (userInput == 4) {
     parentalAcces();
   } else if (userInput == 5) {
     adminPanel();
