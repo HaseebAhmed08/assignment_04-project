@@ -17,12 +17,12 @@ adminPanel() {
                     =================================== 
  ''');
 
-  print('please login for admin panel');
+  print('--:  please login for admin panel  :--');
 
-  print('please enter your Email :--');
+  print('--:  please enter your Email :--');
   String adminEmail = stdin.readLineSync()!;
 
-  print('please enter your password :--');
+  print('--:  please enter your password :--');
   String adminPassword = stdin.readLineSync()!;
 
   bool islogin = true;
@@ -89,8 +89,8 @@ newStudentsAdmissionList() {
   print(newAdmissionStudentData);
   print('''
   
-1 ==>  If you want to go back 'main menu' Enter 'back'    
-2 ==>  If you want to exit programm Enter any button 
+1   ==>  If you want to go back 'main menu' Enter 'back'    
+2   ==>  If you want to exit programm Enter any button 
   ''');
 
   String userInPut = stdin.readLineSync()!;
@@ -107,8 +107,8 @@ oldStudentsAdmissionList() {
   print(oldstudentsData);
   print('''
   
-1 ==>  If you want to go back 'main menu' Enter 'back'    
-2 ==>  If you want to exit programm Enter any button 
+1   ==>  If you want to go back 'main menu' Enter 'back'    
+2   ==>  If you want to exit programm Enter any button 
   ''');
 
   String userInPut = stdin.readLineSync()!;

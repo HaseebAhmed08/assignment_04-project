@@ -14,22 +14,22 @@ parentalAcces() {
 
   print('''
 
-1. If you Want to see Result Enter 1
+1  ==>  If you Want to see Result Enter 1
 
-2. If you Want to go main menu Enter 2
+2  ==>  If you Want to go main menu Enter 2
 ''');
 
   var studentParents = stdin.readLineSync();
 
   if (studentParents == '1') {
-    print('Enter Student Name ');
+    print('--:  Enter Student Name  :--');
     var parents =stdin.readLineSync();
   for (var i in stResult ) {
     if (i.keys.contains(parents)) {
       print('Result of  ${i}');
       break;
     }
-    else{print('Key does not exist');
+    else{print('--:  Key does not exist  :--');
     break;
     }
   }
@@ -43,7 +43,7 @@ parentalAcces() {
 
 
    else {
-    print('This Key Does Not Exist');
+    print('--:  This Key Does Not Exist  :--');
   }
 
 }
