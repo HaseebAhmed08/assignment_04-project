@@ -1,6 +1,8 @@
 
 import 'dart:io';
 
+import 'main.dart';
+
 List<Map<dynamic, dynamic>> newAdmissionStudentData = [];
 
 List<Map<dynamic, dynamic>> oldstudentsData = [
@@ -11,7 +13,7 @@ List<Map<dynamic, dynamic>> oldstudentsData = [
       'age': 19,
       'date of birth': '23/1/2022',
       'address': 'dHA phase the rooling park',
-      'ispayed': '3000'
+      'isPaid': '3000'
     }
   },
   {
@@ -21,7 +23,7 @@ List<Map<dynamic, dynamic>> oldstudentsData = [
       'age': 12,
       'date of birth': '2/12/2000',
       'address': 'malir quaid abad karachi',
-      'ispayed': '3000'
+      'isPaid': '3000'
     }
   },
   {
@@ -31,7 +33,7 @@ List<Map<dynamic, dynamic>> oldstudentsData = [
       'age': 10,
       'date of birth': '2/1/2012',
       'address': 'gulshan e iqbal khokhar park',
-      'ispayed': '3000'
+      'isPaid': '3000'
     }
   },
   {
@@ -41,24 +43,39 @@ List<Map<dynamic, dynamic>> oldstudentsData = [
       'age': 11,
       'date of birth': '2/12/2013',
       'address': 'malir karachi',
-      'ispayed': 'no pay found'
+      'isPaid': 'no pay found'
     }
   }
 ];
 
 void studentadmission() {
+  
+ List <Map<dynamic,dynamic>> allList = oldstudentsData+ newAdmissionStudentData;
+
   bool isadmitted = true;
   while (isadmitted) {
     String studentId = "";
     while (true) {
+      
       print('--:  Enter student Id :--');
       studentId = stdin.readLineSync()!;
+ 
 
-      if (studentId.isNotEmpty) {
+ if (studentId.isNotEmpty) {
         newAdmissionStudentData.add({studentId: {}});
         break;
-      } else {
-        print('--:  You did not enter the Id correctly  :--');
+      }  
+ 
+ 
+
+     else  if  (oldstudentsData.contains(studentId)){
+        print('--:  this key Exist enter another Id   :--');
+        isadmitted = true;
+      }
+       
+       else {
+        print('--:  You did not enter the Id correctly try Again  :--');
+        isadmitted = true;
       }
     }
 
@@ -155,6 +172,7 @@ void studentadmission() {
       isadmitted = true;
       print('--:  Program is continuing  :--');
     } else if (userInput == 'back') {
+      mainn();
       isadmitted = false;
     } else {
       isadmitted = false;

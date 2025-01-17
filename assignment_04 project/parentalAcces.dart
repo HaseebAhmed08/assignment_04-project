@@ -85,25 +85,43 @@ parentalAcces() {
       for (var i in stResult) {
         if (i.keys.contains(parentsinput)) {
           print('Result of  ${i}');
+
+          print('''
+
+            1  ==> If you Want to go main menu Enter 1  
+            
+            2  ==> If you Want exit Enter 2
+''');
+          String userChoice = stdin.readLineSync()!;
+
+          if (userChoice == '1') {
+            mainn();
+          } else if (userChoice == '2') {
+            print("Programm Exit");
+            inList = false;
+            break;
+          } else {
+            print('--:  Program exited  :--');
+
+            inList = false;
+          }
+
           inList = false;
+        } else {
+          print('--:  Key does not exist  :--');
+          print('--:  please Enter again key  :--');
+          inList = true;
+          break;
         }
       }
+    } else if (studentParents == '2') {
+      mainn();
+      inList = false;
     } else {
       print('--:  Key does not exist  :--');
       print('--:  please Enter again key  :--');
       inList = true;
-    }
-  }
-  {
-    if (studentParents == '2') {
-      mainn();
-    } else {
-      print('''
-    ----                               ----  
-     % --:(  This Key Does Not Exist  ):--
-    ----                               ----
-       ''');
-      inList = true;
+      break;
     }
   }
 }

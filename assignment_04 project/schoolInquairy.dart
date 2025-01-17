@@ -14,17 +14,17 @@ schoolInquairy() {
 
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
 =                                                                             =
-=              ==>  if want to know about School Enter  1                     =
+=        1.    ==>  if want to know about School Enter  1                     =
 =                                                                             =
-=              ==>   If you want to know about School Rules Enter  2          =
+=        2.    ==>   If you want to know about School Rules Enter  2          =
 =                                                                             =
-=              ==>   Age crateria for school Enter  3                         =
+=        3.    ==>   Age crateria for school Enter  3                         =
 =                                                                             =
-=              ==>   Document Required for admission Enter  4                 =
+=        4.    ==>   Document Required for admission Enter  4                 =
 =                                                                             =
-=              ==>   Health and Safety policies Enter  5                      =
+=        5.    ==>   Health and Safety policies Enter  5                      =
 =                                                                             =
-=              ==>   Health and Safety policies Enter  6                      =
+=        6.    ==>   Health and Safety policies Enter  6                      =
 =                                                                             =
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 ''');
@@ -42,9 +42,9 @@ schoolInquairy() {
   } else if (userInPut == "5") {
     HealthandSafetyPolicies();
   } else if (userInPut == "6") {
-    mainn();
+   HealthandSafetyPolicies();
   } else {
-    print("--:  This Do's Not exist  :--");
+    print("--: Key This Do's Not exist  :--");
   }
 }
 
@@ -95,8 +95,21 @@ AboutSchool() {
 =                                                                              =
  = = = = = = = = = = = = = = = = = = = = = = == = = = = = = = = = =  = = = = = = 
 
+
 ''');
-}
+
+
+
+
+
+
+
+continueOrExitPrograme();
+     }
+
+
+
+
 
 // about School Rules
 SchoolRules() {
@@ -125,6 +138,16 @@ SchoolRules() {
 9. Safety: Students must follow safety procedures, such as not running in corridors and using equipment properly.
 
 10. Pets: Students must not bring pets to school unless it is part of a lesson. ''');
+
+
+      
+
+
+
+continueOrExitPrograme();
+
+
+
 }
 
 //about Age Crateria
@@ -152,6 +175,18 @@ AgeCrateria() {
 13 =>  Class 9	14-15 Years
 14 =>  Class 10	15-16 Years
 ''');
+
+
+
+
+
+
+
+
+continueOrExitPrograme();
+
+
+
 }
 
 // about Document Required
@@ -180,6 +215,16 @@ DocumentRequired() {
 8. Affidavit/Declaration: If required by the school, a sworn statement regarding certain conditions or information.
 
 ''');
+
+
+
+
+
+
+
+continueOrExitPrograme();
+
+
 }
 
 // about Health and Safety Policies
@@ -211,4 +256,57 @@ HealthandSafetyPolicies() {
 9. Health Screenings: Regular health check-ups and screenings for students and staff.
 
 10.Mental Health Support: Providing access to counselors and mental health resources.''');
+
+
+
+
+
+
+continueOrExitPrograme();
+
+}
+
+
+
+
+//    this functions is work to go main file or exit program
+
+continueOrExitPrograme(){
+
+
+
+bool isContinue = true; 
+     while (isContinue) {
+       
+   print('''
+
+  1   ==>  If you Want to go main menu Enter 1  
+  
+  2   ==>  If you Want exit Enter 2
+''');
+
+
+        String userChoice = stdin.readLineSync()!;
+
+        if (userChoice == '1') {
+        mainn();
+        } else if (userChoice == '2') {
+        print("Programm Exit");
+        isContinue = false;
+        break;
+        } else {
+        print('--:  key does not found try again :--');
+        print('--:  Enter again key  :--');
+
+        isContinue = true;
+
+        }}
+
+
+
+
+
+
+
+
 }
