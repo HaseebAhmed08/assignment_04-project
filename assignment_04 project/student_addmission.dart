@@ -161,17 +161,17 @@ void studentadmission() {
     print(newAdmissionStudentData);
 
     print('''
-1   ==>   If you want to add more students, enter 'add student'
-2   ==>   If you want to close the program, enter any key '1 or a'
-3   ==>   If you want to go to the main menu, enter 'back main'
+1   ==>   If you want to add more students, enter 'yes'
+2   ==>   If you want to close the program, enter 'no'
+3   ==>   If you want to go to the main menu, enter 'back'
 ''');
 
     String userInput = stdin.readLineSync()!;
 
-    if (userInput == 'add student') {
+    if (userInput == 'yes') {
       isadmitted = true;
       print('--:  Program is continuing  :--');
-    } else if (userInput == 'back main') {
+    } else if (userInput == 'back') {
       mainn();
       isadmitted = false;
     } else {
